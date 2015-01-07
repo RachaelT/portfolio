@@ -1,0 +1,22 @@
+<h1>New Project</h1>
+<%= form_for :picture, url: pictures_path do |f| %>
+
+   <p>
+    <%= f.label :thumburl %><br>
+    <%= f.text_field :thumburl %>
+  </p>
+
+  <p>
+    <%= f.label :alt %><br>
+    <%= f.text_field :alt %>
+  </p>
+ 
+  <p>
+    <%= f.label :project %><br>
+    <%= f.text_field :project %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

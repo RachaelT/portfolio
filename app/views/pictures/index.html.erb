@@ -1,0 +1,4 @@
+ <% @pictures.each do |picture| %>
+    <img src= <%= picture.thumburl %> style="width:200px; height:200px" >
+        <p><%= picture.project %></p>
+    <% end %>

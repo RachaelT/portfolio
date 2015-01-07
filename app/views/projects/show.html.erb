@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "project_show.scss" %>
+
+<h1> <%= @project.name %></h1>
+<div class='col-md-4'>
+        
+    <% @project.pictures.each do |picture| %>
+    <img src= <%= picture.thumburl %> style="width:200px; height:200px" >
+        <p><%= picture.project %></p>
+    <% end %>
+</div>
+<div class='col-md-8'>
+    <div class = 'post'>
+ <p><%= @project.post %></p>
+    </div>
+</div>
+
+<h2>pictures:</h2>
+<%= form_for([@project, @project.pictures.build]) do |f| %>
+  <p>
+    <%= f.label :thumburl %><br>
+    <%= f.text_field :thumburl %>
+  </p>
+  <p>
+    <%= f.label :alt %><br>
+    <%= f.text_field :alt %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "bootstrap.css" %>
+  <%= stylesheet_link_tag "topnav.css" %>
+  <%= image_tag "blueprintback.jpg" %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Rachael Thompson's Portfolio</title>
+        <meta name="description" content="A collection of my projects and achievements.">
+            <link rel="stylesheet" href="bootstrap.css">
+            <link rel="stylesheet" href="main.css" >
+            <div class = "navbar navbar-fixed-top">
+
+            <div class="col-md-4">
+                <h1>
+                    <%= link_to 'My Portfolio', root_path %>
+                </h1>
+            </div>
+            
+            <div class="nav">
+                <ul class = "nav nav-pills nav-justified custom">
+                    
+                    <li class ="<%= 'active' if current_page?(pages_theatre_path) %>"><%= link_to 'Theatre', pages_theatre_path %></li>
+                    <li class ="<%= 'active' if current_page?(pages_computing_path)  %>"><%= link_to 'Computing', pages_computing_path %></li>
+                    <li class ="<%= 'active' if current_page?(pages_other_path) %>"><%= link_to 'Other', pages_other_path %></li>
+                    <li class ="<%= 'active' if current_page?(pages_about_path)%>"><%= link_to 'About', pages_about_path %></li>
+                    
+                </ul>
+            </div>
+            
+            <%= image_tag "blueprintback.jpg" %>
+            
+        </div>
+
+
+    </head>
+    <body>
+ <%= yield %>       
+
+
+</body>
+</html>
