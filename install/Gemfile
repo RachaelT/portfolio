@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Specify your gem's dependencies in install.gemspec
+gemspec
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -7,6 +10,3 @@ end
 group :production do
   gem 'pg'
 end
-
-# Specify your gem's dependencies in install.gemspec
-gemspec
