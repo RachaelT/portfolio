@@ -4,6 +4,7 @@ gem 'jquery-rails'
 
 group :development do
    gem 'sqlite3', '1.3.5'
+   gem 'rails_12factor'
 end
 
 group :assets do
@@ -13,6 +14,7 @@ group :assets do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
