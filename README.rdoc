@@ -1,27 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things I still need to do:
 
-Things you may want to cover:
+update CSS for project show pages
 
-* Ruby version
+update CSS in general
 
-* System dependencies
+set project/index to root
 
-* Configuration
+create categories, and resort projects
 
-* Database creation
+fix homepage link so it stops doing the underline thing.
 
-* Database initialization
+add account verification so I'm the only one who can change things
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
