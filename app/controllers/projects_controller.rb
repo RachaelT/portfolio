@@ -5,16 +5,19 @@ class ProjectsController < ApplicationController
 
   def show
       @project = Project.find(params[:id])
+
   end
 
   def new
-      @project = Project.new
+    @category = Category.find(params[:category_id])
+    @project = @category.projects.build
   end
   
-  def create
-      @project = Project.new(project_params)
+  def create      
+      @category = Category.find(params[:category_id])
+      @project = @category.projects.build params.require(:project).permit(:name, :thumburl, :description, :post)
       if @project.save
-          redirect_to(:action => 'index')
+          redirect_to(@category)
       else
           render ('new')
       end
@@ -40,12 +43,12 @@ class ProjectsController < ApplicationController
   def destroy
       @project = Project.find(params[:id])
       @project.destroy
-      redirect_to(:action => 'index')
+      redirect_to projects_path
   end
   
   private
   def project_params
-      params.require(:project).permit(:name, :thumburl, :description, :post)
+    params.require(:project).permit(:name, :thumburl, :description, :post, :category)
   end
   
   

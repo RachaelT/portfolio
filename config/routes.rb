@@ -1,42 +1,30 @@
 Rails.application.routes.draw do
-    
-  get 'pictures/index'
 
-  get 'pictures/show'
+  resources :categories do
+      resources :projects do
+          resources :pictures
+      end
+  end
 
-  get 'pictures/new'
-
-  get 'pictures/edit'
-
-  get 'pictures/delete'
-
+  resources :projects do
+    resources :pictures
+  end
+  get 'pages/home'
+  
+  get 'pages/about'
+  
   get 'projects/index'
-
+  root 'projects#index'
+  
+  get 'projects/edit'
+  
   get 'projects/show'
 
-  get 'projects/new'
 
-  get 'projects/edit'
+  get 'projects/delete' => 'projects#delete', :as => :categories_delete
+    
 
-  get 'projects/delete'
-
-    get 'pages/home'
-    root 'pages#home'
-    
-    get 'pages/about'
-    get 'pages/computing'
-    get 'pages/theatre'
-    get 'pages/other'
-    get 'pages/login'
-    get 'pages/new_project'
-    
-    resources :projects do
-        resources :pictures
-    end
-    get 'projects/:id/delete' => 'projects#delete', :as => :categories_delete
-    
-    
-    
+       
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

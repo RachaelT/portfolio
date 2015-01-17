@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'jquery-rails'
 
 group :development do
-   gem 'sqlite3', '1.3.5'
+   gem 'sqlite3'
    gem 'rails_12factor'
 end
 
@@ -12,6 +12,7 @@ group :assets do
    gem 'coffee-rails'
    gem 'uglifier'
 end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -20,8 +21,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-
-
+gem 'sqlite3'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

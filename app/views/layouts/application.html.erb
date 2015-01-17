@@ -25,20 +25,16 @@
             
             <div class="nav">
                 <ul class = "nav nav-pills nav-justified custom">
-                    
-                    <li class ="<%= 'active' if current_page?(pages_theatre_path) %>"><%= link_to 'Theatre', pages_theatre_path %></li>
-                    <li class ="<%= 'active' if current_page?(pages_computing_path)  %>"><%= link_to 'Computing', pages_computing_path %></li>
-                    <li class ="<%= 'active' if current_page?(pages_other_path) %>"><%= link_to 'Other', pages_other_path %></li>
-                    <li class ="<%= 'active' if current_page?(pages_about_path)%>"><%= link_to 'About', pages_about_path %></li>
-                    
+                    <li class ="<%= 'active' if @page_id == :theatre %>"><%= link_to "Theater", :controller => :categories, :action => :show, :id =>'theatre' %></li>
+                    <li class ="<%= 'active' if @page_id == :computing %>"><%= link_to "Computing", :controller => :categories, :action => :show, :id =>'computing' %></li>
+                    <li class ="<%= 'active' if @page_id == :other %>"><%= link_to "Other", :controller => :categories, :action => :show, :id =>'other' %></li>
+                    <li class ="<%= 'active' if current_page?(pages_about_path) %>"><%= link_to 'About', pages_about_path %></li>
                 </ul>
             </div>
             
             <%= image_tag "blueprintback.jpg" %>
             
         </div>
-
-
     </head>
     <body>
  <%= yield %>       

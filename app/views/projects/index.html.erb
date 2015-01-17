@@ -3,8 +3,6 @@
 
 <%= stylesheet_link_tag "projects_index.scss" %>
 <div class="projects">
-
-      
         <% @projects.reverse_each do |project| %>
 
         <div class="row">
@@ -26,7 +24,7 @@
                           <span><%= link_to "Edit", edit_project_path(project.id) %></span>
                           <span><%= link_to 'Show', project %></span>
                           <span><%= link_to 'Delete', project_path(project), 
-                                    method: :delete, 
+                                    method: :destroy, 
                                     data: {confirm: 'Are you sure?' } %></span>
                     </div>
                 </div>
